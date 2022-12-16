@@ -1,21 +1,20 @@
+import { debounce } from "lodash";
 import React, { useState } from "react";
 
 const Search = ({ search }) => {
   const [searchValue, setSearchValue] = useState("");
-
+  // const resetInputField = debounce(search(searchValue), 2000)
+  
   const handleSearchInputChanges = (e) => {
     setSearchValue(e.target.value);
+    // resetInputField()
   };
 
-  const resetInputField = () => {
-    setSearchValue("");
-  };
 
-  const callSearchFunction = (e) => {
-    e.preventDefault();
-    search(searchValue);
-    resetInputField();
-  };
+  // const callSearchFunction = (e) => {
+  //   e.preventDefault();
+  //   resetInputField();
+  // };
   return (
     <form className="search">
       <h4>Search</h4>
@@ -25,9 +24,9 @@ const Search = ({ search }) => {
         type="text"
         placeholder="Type movie name...."
       />
-      <button onClick={callSearchFunction} type="submit">
+      {/* <button onClick={callSearchFunction} type="submit">
         Search
-      </button>
+      </button> */}
     </form>
   );
 };
