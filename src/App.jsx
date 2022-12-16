@@ -73,7 +73,7 @@ const App = () => {
 
       movies.map((movie, index) => (
         <>
-        
+      
           <Movie
             key={`${index}-${movie.Title}`}
             movie={movie}
@@ -89,6 +89,7 @@ const App = () => {
       <Search search={search} />
       {/* <Movies /> */}
 
+       
       <div className="movies" id="scrl1">
         {retrievedMovies}
       </div>
